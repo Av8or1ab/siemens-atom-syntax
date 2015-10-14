@@ -1,12 +1,12 @@
 {
-  "name": "siemens-language",
+  "name": "siemens-atom-syntax",
   "version": "0.0.1",
   "description": "Siemens Macro language support in Atom",
   "keywords": [
     "syntax",
     "theme"
   ],
-  "repository": "https://github.com/atom/siemens-language",
+  "repository": "https://github.com/atom/siemens-atom-syntax",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
