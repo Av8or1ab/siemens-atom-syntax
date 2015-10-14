@@ -1,0 +1,145 @@
+'scopeName': 'source.siemens'
+'fileTypes': [
+  'spf'
+  'mpf'
+]
+'name': 'Siemens'
+'foldingStartMarker': '(?i:((if)|(while)|(for)))'
+'foldingStopMarker': '(?i:((endif)|(endwhile)|(endfor)))'
+'patterns': [
+  {
+    # Comments
+    'name': 'comment.siemens'
+    'match': ';+.*'
+  }
+  {
+    # String Literals
+    'name': 'string.literal.siemens'
+    'begin': '"'
+    'end': '"'
+  }
+  {
+    # Booleans
+    'name': 'constant.boolean.siemens'
+    'match': '(?i:(true)|(false))'
+  }
+  {
+    # Numbers
+    'name': 'constant.numeric.siemens'
+    # Doesn't start with a letter and/or includes a decimal
+    'match': '\\b(?<![a-z|A-Z|_])(\\d*\\.*\\d+)\\b'
+  }
+  {
+    # System Variables
+    'name': 'variable.system.siemens'
+    'match': '(\\$[a-z|A-Z|_]+)'
+  }
+  {
+    # Flow Control Keywords
+    'name': 'keyword.control.if.siemens'
+    'match': '(?i:((if)|(else)|(EndIf)))'
+  }
+  {
+    # Flow Control Keywords
+    'name': 'keyword.control.while.siemens'
+    'match': '(?i:((While)|(EndWhile)))'
+  }
+  {
+    # Flow Control Keywords
+    'name': 'keyword.control.for.siemens'
+    'match': '(?i:((For)|(EndFor)))'
+  }
+  {
+    # Sync Actions
+    'name': 'keyword.macro.action.siemens'
+    'match': '(?i:(\\b((DO)|(IDS))\\b))'
+  }
+  {
+    # Siemens Macro Words
+    'name': 'keyword.macro.critical.siemens'
+    'match': '(?i:(\\b((STOPRE)|(RET)|(M17)|(M30))\\b))'
+  }
+  {
+    # Siemens Macro Decorators
+    'name': 'keyword.macro.decorator.siemens'
+    'match': '(?i:(\\b((PROC)|(DEF)|(DISPLOF)|(SAVE)|(NCK)|(CHAN))\\b))'
+  }
+  {
+    # Siemens Variable Types
+    'name': 'keyword.macro.types'
+    'match': '(?i:(\\b((axis)|(frame)|(bool)|(int)|(real)|(string)|(var)|(char))\\b))'
+  }
+  {
+    # G-Codes and M-Codes
+    'name': 'keyword.macro.mcodes.siemens'
+    'match': '[gG|mM](\\d+)'
+  }
+  {
+    # Jump Labels
+    'name': 'entity.name.section.siemens'
+    'match': '([a-z|A-Z|_])+:\\s'
+  }
+  {
+    # GUD's conforming to name convention
+    'name': 'variable.GUD.siemens'
+    'match': '[sSbBiIrR][nNcC][mMuU456]_\\w+\\b'
+  }
+  {
+    # Axis style naming AX or CA with 1->32
+    'name': 'variable.axis.siemens'
+    'match': '\\b(?i:(AX|CA))([1-9]|[12]\\d|3[0-6])\\b'
+  }
+  {
+    # Axis names for A-C or CA with 1->7
+    'name': 'variable.axis.basic.siemens'
+    'match': '\\b(?i:([A-C]|CA|MA))[1-6]\\b'
+  }
+  {
+    # End Effector Axes
+    'name': 'variable.axis.endeffector.siemens'
+    'match': '\\b(?i:((W[BEKU])|(TC)|(FF)))\\b'
+  }
+  {
+    # Axes with numbers
+    'name': 'variable.axis.endeffector.siemens'
+    'match': '\\b(?i:((E)|(ME)|(SP)|(WS))[1-2][MS]{0,1})\\b'
+  }
+]
+
+# New Classes
+# string.literal
+# constant.boolean
+# keyword.control.syncaction
+# keyword.control.mcodes
+
+# Available from styles/base.less file
+#   keyword
+#   .control
+#   .operator -> text
+#   .other.special-method -> blue
+#   .other.unit -> orange
+
+#   storage -> purple
+
+#   constant -> orange
+#   .character.escape -> cyan
+#   .numeric -> orange
+#   .other.color -> cyan
+#   .other.symbol -> green
+
+#   variable -> red
+
+#   invalid.illegal -> red
+
+#   string -> green
+#   .regexp -> cyan
+#   .other.link -> red
+
+#   support -> light orange
+#   .class
+#   .function -> blue
+
+#   entity
+#   meta
+#   none
+#   markup

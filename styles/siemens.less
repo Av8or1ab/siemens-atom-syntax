@@ -1,0 +1,56 @@
+// Custom language colors
+@black: #000000;
+
+// Language Class Colors
+.string {
+  &.literal {
+    color: lighten(@green, 10%);
+  }
+}
+
+.constant {
+  &.boolean {
+    color: @orange;
+  }
+  &.numeric {
+    color: @purple;
+  }
+}
+
+.keyword {
+  &.control {
+    color: @cyan;
+  }
+  &.macro {
+    &.action {
+      color: @orange;
+      font-weight: bold;
+    }
+    &.critical {
+      color: @red;
+      font-weight: bold;
+    }
+    &.decorator {
+      color: @blue;
+    }
+    &.mcodes {
+      color: @red;
+    }
+    &.types {
+      color: @orange;
+    }
+  }
+}
+
+.variable {
+  &.system {
+    color: darken(@blue, 10%);
+    font-weight: bold;
+  }
+  &.GUD {
+    color: @red;
+  }
+  &.axis {
+    color: @red;
+  }
+}
